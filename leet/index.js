@@ -4,6 +4,7 @@ var path=require('path');
 var dirPath = path.resolve(__dirname);
 var statusPath = path.join(dirPath, 'status.json');
 var leetDictPath = path.join(dirPath, 'leetDict.json');
+var templatePath = path.join(dirPath, 'testTemplate.js');
 var status_str = fs.readFileSync(statusPath,{
 	encoding: 'utf8'
 });
@@ -33,13 +34,20 @@ else{
 	var newDirPath = path.join(problemPath, dirName);
 	fs.mkdirSync(newDirPath);
 	console.log('Directory ' + newDirPath + ' has been created.');
-	var fileNames = ['index.js', 'test.js', 'input', 'output'];
+	var fileNames = ['index.js', 'input', 'output'];
 	for (var item in fileNames){
 		fs.writeFileSync(path.join(newDirPath, fileNames[item]),'', {
 			encoding: 'utf8'
 		});
-		console.log('File ' + newDirPath + '/' + fileNames[item] + ' has been created.');
+		console.log('File ' + fileNames[item] + ' has been created.');
 	}
+	var template = fs.readFileSync(templatePath, {
+		encoding: 'utf8'
+	});
+	fs.writeFileSync(path.join(newDirPath, 'test.js'), template,{
+		encoding: 'utf8'
+	});
+	console.log('File test.js has been created.');
 	fs.writeFileSync(statusPath, JSON.stringify(status), {
 		encoding: 'utf8'
 	});
