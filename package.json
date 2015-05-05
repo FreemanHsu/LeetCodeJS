@@ -4,7 +4,8 @@
   "description": "LeetCode In Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/mocha"
+    "test": "node ./node_modules/.bin/mocha",
+    "leet": "node ./leet/index.js"
   },
   "author": "AndyHsu",
   "license": "MIT",
