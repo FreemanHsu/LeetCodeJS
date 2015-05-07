@@ -15,8 +15,7 @@ var lengthOfLongestSubstring = module.exports = function(s) {
 		ch = s[i];
 		if (ch in record){
 			result = Math.max(result, i-start);
-			start = record[ch]+1;
-			record={};
+			start = Math.max(start,record[ch]+1);
 			record[ch]=i;
 		}
 		else{
@@ -26,5 +25,3 @@ var lengthOfLongestSubstring = module.exports = function(s) {
 	result = Math.max(result, i-start);
 	return result;
 };
-//
-//console.log(lengthOfLongestSubstring('bbbbbb'));
