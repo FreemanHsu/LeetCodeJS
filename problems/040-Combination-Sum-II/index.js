@@ -38,4 +38,4 @@ var helper = function(nums, cur, curSum, pos, target, res){
 	}
 };
 
-console.log(combinationSum2([2,2,2],4));
+//console.log(combinationSum2([2,2,2],4));
