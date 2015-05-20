@@ -56,4 +56,4 @@ var exist = function(board, word) {
 };
 
 
-console.log(exist(["ABCE","SFCS","ADEE"], "ABCB"));
+//console.log(exist(["ABCE","SFCS","ADEE"], "ABCB"));
